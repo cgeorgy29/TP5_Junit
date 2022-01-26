@@ -30,6 +30,10 @@ public class TicketMachineTest {
 		machine.insertMoney(10);
 		machine.insertMoney(20);
                 // Les montants ont été correctement additionnés  
-		assertEquals(10 + 20, machine.getBalance(), "La balance n'est pas correctement mise à jour");              
+		assertEquals(10 + 20, machine.getBalance(), "La balance n'est pas correctement mise à jour");     
+	}
+	public void PasAssezArgent (){
+	machine.insertMoney(PRICE - 1);
+	assertFalse(machine.printTicket());
 	}
 }
